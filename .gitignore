@@ -1,0 +1,18 @@
+# Ignorar arquivos CSV, compactados e grandes
+*.csv
+*.gz
+*.zip
+*.db
+
+# Ignorar diretórios específicos
+ny_taxi_postgres_data/
+myenv/
+data_pgadmin/*
+data_pgadmin/
+ny_taxi_postgres_data/*
+myenv/*
+data_admin/*
+
+# Ignorar arquivos no subdiretório
+01-docker-terraform/02_docker_sql/yellow_tripdata_2021-01.csv
+99-files-arquive/yellow_tripdata_2021-01.csv.gz
