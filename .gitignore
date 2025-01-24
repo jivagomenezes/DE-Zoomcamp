@@ -3,6 +3,7 @@
 *.gz
 *.zip
 *.db
+*.json
 
 # Ignorar diretórios específicos
 ny_taxi_postgres_data/
