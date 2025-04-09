@@ -1,0 +1,196 @@
+[2025-04-07T19:30:46.034+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T19:30:46.059+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: GCP_ingestion_green.upload_to_gcs scheduled__2019-02-02T06:00:00+00:00 [queued]>
+[2025-04-07T19:30:46.073+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: GCP_ingestion_green.upload_to_gcs scheduled__2019-02-02T06:00:00+00:00 [queued]>
+[2025-04-07T19:30:46.073+0000] {taskinstance.py:2866} INFO - Starting attempt 20 of 30
+[2025-04-07T19:30:46.095+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): upload_to_gcs> on 2019-02-02 06:00:00+00:00
+[2025-04-07T19:30:46.104+0000] {standard_task_runner.py:72} INFO - Started process 1460 to run task
+[2025-04-07T19:30:46.125+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'GCP_ingestion_green', 'upload_to_gcs', 'scheduled__2019-02-02T06:00:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp_green.py', '--cfg-path', '/tmp/tmp863m4jkl']
+[2025-04-07T19:30:46.131+0000] {standard_task_runner.py:105} INFO - Job 47: Subtask upload_to_gcs
+[2025-04-07T19:30:46.213+0000] {task_command.py:467} INFO - Running <TaskInstance: GCP_ingestion_green.upload_to_gcs scheduled__2019-02-02T06:00:00+00:00 [running]> on host ca240955ca52
+[2025-04-07T19:30:46.615+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='GCP_ingestion_green' AIRFLOW_CTX_TASK_ID='upload_to_gcs' AIRFLOW_CTX_EXECUTION_DATE='2019-02-02T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='20' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2019-02-02T06:00:00+00:00'
+[2025-04-07T19:30:46.616+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-07T19:30:46.641+0000] {connection.py:277} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2025-04-07T19:30:46.649+0000] {base.py:84} INFO - Retrieving connection 'gcp-***'
+[2025-04-07T19:30:47.254+0000] {gcs.py:515} ERROR - Upload attempt of object: raw/output_2019_02.parquet from raw/output_2019_02.parquet has failed. Attempt: 1, max 1.
+[2025-04-07T19:30:47.255+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2700, in _prep_and_do_upload
+    created_json = self._do_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2523, in _do_upload
+    response = self._do_resumable_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2329, in _do_resumable_upload
+    upload, transport = self._initiate_resumable_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2203, in _initiate_resumable_upload
+    upload.initiate(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/upload.py", line 420, in initiate
+    return _request_helpers.wait_and_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/upload.py", line 416, in retriable_request
+    self._process_initiate_response(result)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/_upload.py", line 518, in _process_initiate_response
+    _helpers.require_status_code(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 403, 'Expected one of', 200, 201)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/data_ingestion_gcp_green.py", line 63, in upload_to_gcs
+    hook.upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 554, in upload
+    _call_with_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 522, in _call_with_retry
+    raise e
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 512, in _call_with_retry
+    f()
+  File "/usr/local/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 3006, in upload_from_filename
+    self._handle_filename_and_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2884, in _handle_filename_and_upload
+    self._prep_and_do_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2718, in _prep_and_do_upload
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 4908, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.Forbidden: 403 POST https://storage.googleapis.com/upload/storage/v1/b/zoomcamp-data-lake-jivago-2025/o?uploadType=resumable: {
+  "error": {
+    "code": 403,
+    "message": "zoomcamp-airflow-service@zoomcamp-airflow-456109.iam.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "zoomcamp-airflow-service@zoomcamp-airflow-456109.iam.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.CREATED: 201>)
+[2025-04-07T19:30:47.283+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=GCP_ingestion_green, task_id=upload_to_gcs, run_id=scheduled__2019-02-02T06:00:00+00:00, execution_date=20190202T060000, start_date=20250407T193046, end_date=20250407T193047
+[2025-04-07T19:30:47.311+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-07T19:30:47.312+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 47 for task upload_to_gcs (403 POST https://storage.googleapis.com/upload/storage/v1/b/zoomcamp-data-lake-jivago-2025/o?uploadType=resumable: {
+  "error": {
+    "code": 403,
+    "message": "zoomcamp-airflow-service@zoomcamp-airflow-456109.iam.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "zoomcamp-airflow-service@zoomcamp-airflow-456109.iam.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.CREATED: 201>); 1460)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2700, in _prep_and_do_upload
+    created_json = self._do_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2523, in _do_upload
+    response = self._do_resumable_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2329, in _do_resumable_upload
+    upload, transport = self._initiate_resumable_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2203, in _initiate_resumable_upload
+    upload.initiate(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/upload.py", line 420, in initiate
+    return _request_helpers.wait_and_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/_request_helpers.py", line 155, in wait_and_retry
+    response = func()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/requests/upload.py", line 416, in retriable_request
+    self._process_initiate_response(result)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/_upload.py", line 518, in _process_initiate_response
+    _helpers.require_status_code(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/resumable_media/_helpers.py", line 108, in require_status_code
+    raise common.InvalidResponse(
+google.resumable_media.common.InvalidResponse: ('Request failed with status code', 403, 'Expected one of', 200, 201)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/data_ingestion_gcp_green.py", line 63, in upload_to_gcs
+    hook.upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 554, in upload
+    _call_with_retry(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 522, in _call_with_retry
+    raise e
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 512, in _call_with_retry
+    f()
+  File "/usr/local/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 3006, in upload_from_filename
+    self._handle_filename_and_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2884, in _handle_filename_and_upload
+    self._prep_and_do_upload(
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 2718, in _prep_and_do_upload
+    _raise_from_invalid_response(exc)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/storage/blob.py", line 4908, in _raise_from_invalid_response
+    raise exceptions.from_http_status(response.status_code, message, response=response)
+google.api_core.exceptions.Forbidden: 403 POST https://storage.googleapis.com/upload/storage/v1/b/zoomcamp-data-lake-jivago-2025/o?uploadType=resumable: {
+  "error": {
+    "code": 403,
+    "message": "zoomcamp-airflow-service@zoomcamp-airflow-456109.iam.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+    "errors": [
+      {
+        "message": "zoomcamp-airflow-service@zoomcamp-airflow-456109.iam.gserviceaccount.com does not have storage.objects.create access to the Google Cloud Storage object. Permission 'storage.objects.create' denied on resource (or it may not exist).",
+        "domain": "global",
+        "reason": "forbidden"
+      }
+    ]
+  }
+}
+: ('Request failed with status code', 403, 'Expected one of', <HTTPStatus.OK: 200>, <HTTPStatus.CREATED: 201>)
+[2025-04-07T19:30:47.376+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-07T19:30:47.410+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T19:30:47.413+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

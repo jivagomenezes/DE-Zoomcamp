@@ -1,0 +1,96 @@
+[2025-04-07T19:41:35.932+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T19:41:35.974+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: GCP_ingestion_green.create_final_table scheduled__2019-02-02T06:00:00+00:00 [queued]>
+[2025-04-07T19:41:36.005+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: GCP_ingestion_green.create_final_table scheduled__2019-02-02T06:00:00+00:00 [queued]>
+[2025-04-07T19:41:36.005+0000] {taskinstance.py:2866} INFO - Starting attempt 2 of 5
+[2025-04-07T19:41:36.040+0000] {taskinstance.py:2889} INFO - Executing <Task(BigQueryInsertJobOperator): create_final_table> on 2019-02-02 06:00:00+00:00
+[2025-04-07T19:41:36.061+0000] {standard_task_runner.py:72} INFO - Started process 1906 to run task
+[2025-04-07T19:41:36.070+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'GCP_ingestion_green', 'create_final_table', 'scheduled__2019-02-02T06:00:00+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp_green.py', '--cfg-path', '/tmp/tmptpx0no8o']
+[2025-04-07T19:41:36.075+0000] {standard_task_runner.py:105} INFO - Job 51: Subtask create_final_table
+[2025-04-07T19:41:36.231+0000] {task_command.py:467} INFO - Running <TaskInstance: GCP_ingestion_green.create_final_table scheduled__2019-02-02T06:00:00+00:00 [running]> on host ca240955ca52
+[2025-04-07T19:41:36.872+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='GCP_ingestion_green' AIRFLOW_CTX_TASK_ID='create_final_table' AIRFLOW_CTX_EXECUTION_DATE='2019-02-02T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2019-02-02T06:00:00+00:00'
+[2025-04-07T19:41:36.874+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-07T19:41:36.909+0000] {connection.py:277} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2025-04-07T19:41:36.920+0000] {base.py:84} INFO - Retrieving connection 'gcp-***'
+[2025-04-07T19:41:36.971+0000] {bigquery.py:2959} INFO - Executing: {'query': {'query': '\n                CREATE TABLE IF NOT EXISTS `zoomcamp-***-456109.ny_taxi_data.green_2019`\n                (\n                    unique_row_id BYTES,\n                    filename STRING,      \n                    VendorID INT64,\n                    lpep_pickup_datetime TIMESTAMP,\n                    lpep_dropoff_datetime TIMESTAMP,\n                    store_and_fwd_flag STRING,\n                    RatecodeID INT64,\n                    PULocationID INT64,\n                    DOLocationID INT64,\n                    passenger_count INT64,\n                    trip_distance FLOAT64,\n                    fare_amount FLOAT64,\n                    extra FLOAT64,\n                    mta_tax FLOAT64,\n                    tip_amount FLOAT64,\n                    tolls_amount FLOAT64,\n                    ehail_fee FLOAT64,\n                    improvement_surcharge FLOAT64,\n                    total_amount FLOAT64,\n                    payment_type INT64,\n                    trip_type INT64,\n                    congestion_surcharge FLOAT64\n                )    \n            ', 'useLegacySql': False}}'
+[2025-04-07T19:41:36.973+0000] {bigquery.py:1699} INFO - Inserting job ***_GCP_ingestion_green_create_final_table_2019_02_02T06_00_00_00_00_09131deaf90d6ac5e8044291d55d30dd
+[2025-04-07T19:41:37.867+0000] {taskinstance.py:3311} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 3025, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1590, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1579, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 971, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.Forbidden: 403 Access Denied: Dataset zoomcamp-airflow-456109:ny_taxi_data: Permission bigquery.tables.create denied on dataset zoomcamp-airflow-456109:ny_taxi_data (or it may not exist).; reason: accessDenied, message: Access Denied: Dataset zoomcamp-airflow-456109:ny_taxi_data: Permission bigquery.tables.create denied on dataset zoomcamp-airflow-456109:ny_taxi_data (or it may not exist).
+
+Location: EU
+Job ID: airflow_GCP_ingestion_green_create_final_table_2019_02_02T06_00_00_00_00_09131deaf90d6ac5e8044291d55d30dd
+
+[2025-04-07T19:41:37.895+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=GCP_ingestion_green, task_id=create_final_table, run_id=scheduled__2019-02-02T06:00:00+00:00, execution_date=20190202T060000, start_date=20250407T194135, end_date=20250407T194137
+[2025-04-07T19:41:37.929+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-07T19:41:37.930+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 51 for task create_final_table (403 Access Denied: Dataset zoomcamp-airflow-456109:ny_taxi_data: Permission bigquery.tables.create denied on dataset zoomcamp-airflow-456109:ny_taxi_data (or it may not exist).; reason: accessDenied, message: Access Denied: Dataset zoomcamp-airflow-456109:ny_taxi_data: Permission bigquery.tables.create denied on dataset zoomcamp-airflow-456109:ny_taxi_data (or it may not exist).
+
+Location: EU
+Job ID: airflow_GCP_ingestion_green_create_final_table_2019_02_02T06_00_00_00_00_09131deaf90d6ac5e8044291d55d30dd
+; 1906)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3005, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3159, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 3183, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/baseoperator.py", line 422, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 3025, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1590, in result
+    do_get_result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/query.py", line 1579, in do_get_result
+    super(QueryJob, self).result(retry=retry, timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job/base.py", line 971, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.Forbidden: 403 Access Denied: Dataset zoomcamp-airflow-456109:ny_taxi_data: Permission bigquery.tables.create denied on dataset zoomcamp-airflow-456109:ny_taxi_data (or it may not exist).; reason: accessDenied, message: Access Denied: Dataset zoomcamp-airflow-456109:ny_taxi_data: Permission bigquery.tables.create denied on dataset zoomcamp-airflow-456109:ny_taxi_data (or it may not exist).
+
+Location: EU
+Job ID: airflow_GCP_ingestion_green_create_final_table_2019_02_02T06_00_00_00_00_09131deaf90d6ac5e8044291d55d30dd
+
+[2025-04-07T19:41:37.992+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-07T19:41:38.043+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T19:41:38.049+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

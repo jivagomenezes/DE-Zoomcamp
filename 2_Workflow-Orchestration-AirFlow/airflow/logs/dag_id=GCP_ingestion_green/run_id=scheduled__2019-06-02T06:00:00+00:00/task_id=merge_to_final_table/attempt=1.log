@@ -1,0 +1,20 @@
+[2025-04-07T19:48:38.993+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T19:48:39.014+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: GCP_ingestion_green.merge_to_final_table scheduled__2019-06-02T06:00:00+00:00 [queued]>
+[2025-04-07T19:48:39.033+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: GCP_ingestion_green.merge_to_final_table scheduled__2019-06-02T06:00:00+00:00 [queued]>
+[2025-04-07T19:48:39.033+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 4
+[2025-04-07T19:48:39.052+0000] {taskinstance.py:2889} INFO - Executing <Task(BigQueryInsertJobOperator): merge_to_final_table> on 2019-06-02 06:00:00+00:00
+[2025-04-07T19:48:39.063+0000] {standard_task_runner.py:72} INFO - Started process 2426 to run task
+[2025-04-07T19:48:39.068+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'GCP_ingestion_green', 'merge_to_final_table', 'scheduled__2019-06-02T06:00:00+00:00', '--job-id', '97', '--raw', '--subdir', 'DAGS_FOLDER/data_ingestion_gcp_green.py', '--cfg-path', '/tmp/tmpjy805kw2']
+[2025-04-07T19:48:39.071+0000] {standard_task_runner.py:105} INFO - Job 97: Subtask merge_to_final_table
+[2025-04-07T19:48:39.131+0000] {task_command.py:467} INFO - Running <TaskInstance: GCP_ingestion_green.merge_to_final_table scheduled__2019-06-02T06:00:00+00:00 [running]> on host ca240955ca52
+[2025-04-07T19:48:39.428+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='GCP_ingestion_green' AIRFLOW_CTX_TASK_ID='merge_to_final_table' AIRFLOW_CTX_EXECUTION_DATE='2019-06-02T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2019-06-02T06:00:00+00:00'
+[2025-04-07T19:48:39.430+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-04-07T19:48:39.453+0000] {connection.py:277} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2025-04-07T19:48:39.458+0000] {base.py:84} INFO - Retrieving connection 'gcp-***'
+[2025-04-07T19:48:39.501+0000] {bigquery.py:2959} INFO - Executing: {'query': {'query': '\n                MERGE INTO `zoomcamp-***-456109.ny_taxi_data.green_2019` T\n                USING `zoomcamp-***-456109.ny_taxi_data.green_taxi_2019_06_tmp` S\n                ON T.unique_row_id = S.unique_row_id\n                WHEN NOT MATCHED THEN\n                    INSERT (unique_row_id, filename, VendorID, lpep_pickup_datetime, lpep_dropoff_datetime, store_and_fwd_flag, RatecodeID, PULocationID, DOLocationID, passenger_count, trip_distance, fare_amount, extra, mta_tax, tip_amount, tolls_amount, ehail_fee, improvement_surcharge, total_amount, payment_type, trip_type, congestion_surcharge)\n                    VALUES (S.unique_row_id, S.filename, S.VendorID, S.lpep_pickup_datetime, S.lpep_dropoff_datetime, S.store_and_fwd_flag, S.RatecodeID, S.PULocationID, S.DOLocationID, S.passenger_count, S.trip_distance, S.fare_amount, S.extra, S.mta_tax, S.tip_amount, S.tolls_amount, S.ehail_fee, S.improvement_surcharge, S.total_amount, S.payment_type, S.trip_type, S.congestion_surcharge);\n            ', 'useLegacySql': False}}'
+[2025-04-07T19:48:39.502+0000] {bigquery.py:1699} INFO - Inserting job ***_GCP_ingestion_green_merge_to_final_table_2019_06_02T06_00_00_00_00_227187ba8d229b41480bd3ed7b3ba90d
+[2025-04-07T19:48:46.696+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-04-07T19:48:46.696+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=GCP_ingestion_green, task_id=merge_to_final_table, run_id=scheduled__2019-06-02T06:00:00+00:00, execution_date=20190602T060000, start_date=20250407T194839, end_date=20250407T194846
+[2025-04-07T19:48:46.750+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-07T19:48:46.777+0000] {taskinstance.py:3895} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T19:48:46.780+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
