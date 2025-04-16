@@ -1,0 +1,350 @@
+Spark Executor Command: "/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/jdk-11.0.2/bin/java" "-cp" "/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/sparkEnv/conf/:/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/sparkEnv/jars/*" "-Xmx1024M" "-Dspark.driver.port=44975" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.255.255.254:44975" "--executor-id" "0" "--hostname" "10.255.255.254" "--cores" "8" "--app-id" "app-20250413214913-0002" "--worker-url" "spark://Worker@10.255.255.254:34013" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/04/13 21:50:37 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 453425@ThinkPad-Jivago
+25/04/13 21:50:37 INFO SignalUtils: Registering signal handler for TERM
+25/04/13 21:50:37 INFO SignalUtils: Registering signal handler for HUP
+25/04/13 21:50:37 INFO SignalUtils: Registering signal handler for INT
+25/04/13 21:50:37 WARN Utils: Your hostname, ThinkPad-Jivago resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+25/04/13 21:50:37 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+25/04/13 21:50:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/04/13 21:50:37 INFO SecurityManager: Changing view acls to: jivagomenezes
+25/04/13 21:50:37 INFO SecurityManager: Changing modify acls to: jivagomenezes
+25/04/13 21:50:37 INFO SecurityManager: Changing view acls groups to: 
+25/04/13 21:50:37 INFO SecurityManager: Changing modify acls groups to: 
+25/04/13 21:50:37 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: jivagomenezes; groups with view permissions: EMPTY; users with modify permissions: jivagomenezes; groups with modify permissions: EMPTY
+25/04/13 21:50:38 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:44975 after 96 ms (0 ms spent in bootstraps)
+25/04/13 21:50:38 INFO SecurityManager: Changing view acls to: jivagomenezes
+25/04/13 21:50:38 INFO SecurityManager: Changing modify acls to: jivagomenezes
+25/04/13 21:50:38 INFO SecurityManager: Changing view acls groups to: 
+25/04/13 21:50:38 INFO SecurityManager: Changing modify acls groups to: 
+25/04/13 21:50:38 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: jivagomenezes; groups with view permissions: EMPTY; users with modify permissions: jivagomenezes; groups with modify permissions: EMPTY
+25/04/13 21:50:38 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:44975 after 6 ms (0 ms spent in bootstraps)
+25/04/13 21:50:38 INFO DiskBlockManager: Created local directory at /tmp/spark-8820a8a5-58a3-48f0-8f85-ada23d0d8107/executor-8bc7395e-ccac-44a1-a410-931194504918/blockmgr-840fd05a-d11b-452f-8e04-b37f7e848fcf
+25/04/13 21:50:38 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/04/13 21:50:39 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.255.255.254:44975
+25/04/13 21:50:39 INFO WorkerWatcher: Connecting to worker spark://Worker@10.255.255.254:34013
+25/04/13 21:50:39 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:34013 after 6 ms (0 ms spent in bootstraps)
+25/04/13 21:50:39 INFO WorkerWatcher: Successfully connected to spark://Worker@10.255.255.254:34013
+25/04/13 21:50:39 INFO ResourceUtils: ==============================================================
+25/04/13 21:50:39 INFO ResourceUtils: No custom resources configured for spark.executor.
+25/04/13 21:50:39 INFO ResourceUtils: ==============================================================
+25/04/13 21:50:39 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+25/04/13 21:50:39 INFO Executor: Starting executor ID 0 on host 10.255.255.254
+25/04/13 21:50:39 INFO Executor: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+25/04/13 21:50:39 INFO Executor: Java version 11.0.2
+25/04/13 21:50:39 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36991.
+25/04/13 21:50:39 INFO NettyBlockTransferService: Server created on 10.255.255.254:36991
+25/04/13 21:50:39 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/04/13 21:50:39 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.255.255.254, 36991, None)
+25/04/13 21:50:39 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.255.255.254, 36991, None)
+25/04/13 21:50:39 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.255.255.254, 36991, None)
+25/04/13 21:50:39 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/04/13 21:50:39 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@355faf87 for default.
+25/04/13 21:50:39 INFO CoarseGrainedExecutorBackend: Got assigned task 0
+25/04/13 21:50:39 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+25/04/13 21:50:39 INFO TorrentBroadcast: Started reading broadcast variable 0 with 1 pieces (estimated total size 4.0 MiB)
+25/04/13 21:50:39 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:45249 after 4 ms (0 ms spent in bootstraps)
+25/04/13 21:50:39 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 37.4 KiB, free 434.4 MiB)
+25/04/13 21:50:39 INFO TorrentBroadcast: Reading broadcast variable 0 took 151 ms
+25/04/13 21:50:39 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 103.4 KiB, free 434.3 MiB)
+25/04/13 21:50:41 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2706 bytes result sent to driver
+25/04/13 21:50:42 INFO CoarseGrainedExecutorBackend: Got assigned task 1
+25/04/13 21:50:42 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+25/04/13 21:50:42 INFO TorrentBroadcast: Started reading broadcast variable 1 with 1 pieces (estimated total size 4.0 MiB)
+25/04/13 21:50:42 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 37.4 KiB, free 434.4 MiB)
+25/04/13 21:50:42 INFO TorrentBroadcast: Reading broadcast variable 1 took 22 ms
+25/04/13 21:50:42 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 103.4 KiB, free 434.3 MiB)
+25/04/13 21:50:42 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2583 bytes result sent to driver
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 2
+25/04/13 21:50:46 INFO Executor: Running task 0.0 in stage 2.0 (TID 2)
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 3
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 4
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 5
+25/04/13 21:50:46 INFO Executor: Running task 2.0 in stage 2.0 (TID 4)
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 6
+25/04/13 21:50:46 INFO Executor: Running task 1.0 in stage 2.0 (TID 3)
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 7
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 8
+25/04/13 21:50:46 INFO Executor: Running task 3.0 in stage 2.0 (TID 5)
+25/04/13 21:50:46 INFO Executor: Running task 4.0 in stage 2.0 (TID 6)
+25/04/13 21:50:46 INFO CoarseGrainedExecutorBackend: Got assigned task 9
+25/04/13 21:50:46 INFO Executor: Running task 5.0 in stage 2.0 (TID 7)
+25/04/13 21:50:46 INFO Executor: Running task 6.0 in stage 2.0 (TID 8)
+25/04/13 21:50:46 INFO Executor: Running task 7.0 in stage 2.0 (TID 9)
+25/04/13 21:50:46 INFO TorrentBroadcast: Started reading broadcast variable 4 with 1 pieces (estimated total size 4.0 MiB)
+25/04/13 21:50:46 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 32.4 KiB, free 434.4 MiB)
+25/04/13 21:50:46 INFO TorrentBroadcast: Reading broadcast variable 4 took 21 ms
+25/04/13 21:50:46 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 99.5 KiB, free 434.3 MiB)
+25/04/13 21:50:48 INFO CodeGenerator: Code generated in 506.266327 ms
+25/04/13 21:50:48 INFO CodeGenerator: Code generated in 216.743824 ms
+25/04/13 21:50:48 INFO CodeGenerator: Code generated in 29.992496 ms
+25/04/13 21:50:48 INFO CodeGenerator: Code generated in 23.099745 ms
+25/04/13 21:50:48 INFO CodeGenerator: Code generated in 38.373606 ms
+25/04/13 21:50:48 INFO CodeGenerator: Code generated in 28.490319 ms
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/01/part-00000-8fbb23b3-c92e-4c22-8b04-d5bbf142d66f-c000.snappy.parquet, range: 0-3203149, partition values: [empty row]
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/08/part-00003-479133dd-8ad7-4950-a797-11836fde675e-c000.snappy.parquet, range: 0-601186, partition values: [empty row]
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/06/part-00003-3e87e5e6-1c7d-490a-bb67-2d00578d4845-c000.snappy.parquet, range: 0-489263, partition values: [empty row]
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/09/part-00002-87d20201-6048-420d-9f73-9edfea0eedf1-c000.snappy.parquet, range: 0-637325, partition values: [empty row]
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/05/part-00002-930059c5-4b8d-4ccd-9fbe-b013fc5eb168-c000.snappy.parquet, range: 0-447339, partition values: [empty row]
+25/04/13 21:50:48 INFO TorrentBroadcast: Started reading broadcast variable 2 with 1 pieces (estimated total size 4.0 MiB)
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/10/part-00000-a6bc1943-4220-41fe-8b6e-e549fb7280ff-c000.snappy.parquet, range: 0-688911, partition values: [empty row]
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/03/part-00001-402617c6-2027-45ca-ba6f-4a55b874b764-c000.snappy.parquet, range: 0-1679288, partition values: [empty row]
+25/04/13 21:50:48 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/02/part-00000-a324f200-213d-450e-a894-433372530a2d-c000.snappy.parquet, range: 0-2904383, partition values: [empty row]
+25/04/13 21:50:48 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 35.5 KiB, free 416.2 MiB)
+25/04/13 21:50:48 INFO TorrentBroadcast: Reading broadcast variable 2 took 26 ms
+25/04/13 21:50:48 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 370.9 KiB, free 415.9 MiB)
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:49 INFO CodecPool: Got brand-new decompressor [.snappy]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/04/part-00001-0486dddb-9742-4c2c-b7e4-46a38957eb80-c000.snappy.parquet, range: 0-291245, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/08/part-00000-479133dd-8ad7-4950-a797-11836fde675e-c000.snappy.parquet, range: 0-600926, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/11/part-00003-b5b50e1f-5553-4589-82ff-a5b82a381ba8-c000.snappy.parquet, range: 0-647558, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/09/part-00003-87d20201-6048-420d-9f73-9edfea0eedf1-c000.snappy.parquet, range: 0-637054, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/06/part-00001-3e87e5e6-1c7d-490a-bb67-2d00578d4845-c000.snappy.parquet, range: 0-489155, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/04/part-00003-0486dddb-9742-4c2c-b7e4-46a38957eb80-c000.snappy.parquet, range: 0-291242, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/06/part-00000-3e87e5e6-1c7d-490a-bb67-2d00578d4845-c000.snappy.parquet, range: 0-488681, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/03/part-00000-402617c6-2027-45ca-ba6f-4a55b874b764-c000.snappy.parquet, range: 0-1678956, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/11/part-00000-b5b50e1f-5553-4589-82ff-a5b82a381ba8-c000.snappy.parquet, range: 0-646582, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/12/part-00000-76da35dd-4fd3-4bea-8651-66fd2575a4d2-c000.snappy.parquet, range: 0-609433, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/08/part-00001-479133dd-8ad7-4950-a797-11836fde675e-c000.snappy.parquet, range: 0-600503, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/04/part-00002-0486dddb-9742-4c2c-b7e4-46a38957eb80-c000.snappy.parquet, range: 0-290547, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/06/part-00002-3e87e5e6-1c7d-490a-bb67-2d00578d4845-c000.snappy.parquet, range: 0-488516, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/02/part-00003-a324f200-213d-450e-a894-433372530a2d-c000.snappy.parquet, range: 0-2901881, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/04/part-00000-0486dddb-9742-4c2c-b7e4-46a38957eb80-c000.snappy.parquet, range: 0-290090, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/11/part-00001-b5b50e1f-5553-4589-82ff-a5b82a381ba8-c000.snappy.parquet, range: 0-645002, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/01/part-00001-8fbb23b3-c92e-4c22-8b04-d5bbf142d66f-c000.snappy.parquet, range: 0-3202910, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/12/part-00002-76da35dd-4fd3-4bea-8651-66fd2575a4d2-c000.snappy.parquet, range: 0-608030, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/07/part-00003-ee9b644b-dae8-41c0-bd17-61a24b67f4c0-c000.snappy.parquet, range: 0-542173, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/05/part-00003-930059c5-4b8d-4ccd-9fbe-b013fc5eb168-c000.snappy.parquet, range: 0-448751, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/12/part-00001-76da35dd-4fd3-4bea-8651-66fd2575a4d2-c000.snappy.parquet, range: 0-607384, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/05/part-00001-930059c5-4b8d-4ccd-9fbe-b013fc5eb168-c000.snappy.parquet, range: 0-448323, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/11/part-00002-b5b50e1f-5553-4589-82ff-a5b82a381ba8-c000.snappy.parquet, range: 0-644672, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/03/part-00003-402617c6-2027-45ca-ba6f-4a55b874b764-c000.snappy.parquet, range: 0-1677617, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/07/part-00001-ee9b644b-dae8-41c0-bd17-61a24b67f4c0-c000.snappy.parquet, range: 0-542027, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/12/part-00003-76da35dd-4fd3-4bea-8651-66fd2575a4d2-c000.snappy.parquet, range: 0-607132, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/09/part-00000-87d20201-6048-420d-9f73-9edfea0eedf1-c000.snappy.parquet, range: 0-638354, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/07/part-00002-ee9b644b-dae8-41c0-bd17-61a24b67f4c0-c000.snappy.parquet, range: 0-541534, partition values: [empty row]
+25/04/13 21:50:50 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/05/part-00000-930059c5-4b8d-4ccd-9fbe-b013fc5eb168-c000.snappy.parquet, range: 0-447833, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/07/part-00000-ee9b644b-dae8-41c0-bd17-61a24b67f4c0-c000.snappy.parquet, range: 0-540041, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/02/part-00001-a324f200-213d-450e-a894-433372530a2d-c000.snappy.parquet, range: 0-2900077, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/09/part-00001-87d20201-6048-420d-9f73-9edfea0eedf1-c000.snappy.parquet, range: 0-638070, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/08/part-00002-479133dd-8ad7-4950-a797-11836fde675e-c000.snappy.parquet, range: 0-601828, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/01/part-00003-8fbb23b3-c92e-4c22-8b04-d5bbf142d66f-c000.snappy.parquet, range: 0-3198460, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/10/part-00001-a6bc1943-4220-41fe-8b6e-e549fb7280ff-c000.snappy.parquet, range: 0-689954, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/10/part-00003-a6bc1943-4220-41fe-8b6e-e549fb7280ff-c000.snappy.parquet, range: 0-689812, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/10/part-00002-a6bc1943-4220-41fe-8b6e-e549fb7280ff-c000.snappy.parquet, range: 0-689488, partition values: [empty row]
+25/04/13 21:50:51 INFO Executor: Finished task 7.0 in stage 2.0 (TID 9). 3517 bytes result sent to driver
+25/04/13 21:50:51 INFO CoarseGrainedExecutorBackend: Got assigned task 10
+25/04/13 21:50:51 INFO Executor: Running task 8.0 in stage 2.0 (TID 10)
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/01/part-00002-8fbb23b3-c92e-4c22-8b04-d5bbf142d66f-c000.snappy.parquet, range: 0-3188034, partition values: [empty row]
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/02/part-00002-a324f200-213d-450e-a894-433372530a2d-c000.snappy.parquet, range: 0-2893992, partition values: [empty row]
+25/04/13 21:50:51 INFO Executor: Finished task 5.0 in stage 2.0 (TID 7). 3474 bytes result sent to driver
+25/04/13 21:50:51 INFO CoarseGrainedExecutorBackend: Got assigned task 11
+25/04/13 21:50:51 INFO Executor: Running task 9.0 in stage 2.0 (TID 11)
+25/04/13 21:50:51 INFO Executor: Finished task 6.0 in stage 2.0 (TID 8). 3474 bytes result sent to driver
+25/04/13 21:50:51 INFO Executor: Finished task 4.0 in stage 2.0 (TID 6). 3474 bytes result sent to driver
+25/04/13 21:50:51 INFO CoarseGrainedExecutorBackend: Got assigned task 12
+25/04/13 21:50:51 INFO Executor: Running task 10.0 in stage 2.0 (TID 12)
+25/04/13 21:50:51 INFO CoarseGrainedExecutorBackend: Got assigned task 13
+25/04/13 21:50:51 INFO Executor: Running task 11.0 in stage 2.0 (TID 13)
+25/04/13 21:50:51 INFO Executor: Finished task 3.0 in stage 2.0 (TID 5). 3474 bytes result sent to driver
+25/04/13 21:50:51 INFO CodeGenerator: Code generated in 211.671514 ms
+25/04/13 21:50:51 INFO CoarseGrainedExecutorBackend: Got assigned task 14
+25/04/13 21:50:51 INFO Executor: Running task 12.0 in stage 2.0 (TID 14)
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/01/part-00001-29294009-15d0-41fd-a046-e40b75cc012d-c000.snappy.parquet, range: 0-42374314, partition values: [empty row]
+25/04/13 21:50:51 INFO TorrentBroadcast: Started reading broadcast variable 3 with 1 pieces (estimated total size 4.0 MiB)
+25/04/13 21:50:51 INFO Executor: Finished task 2.0 in stage 2.0 (TID 4). 3517 bytes result sent to driver
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/02/part-00001-b534908f-ec18-46db-bfff-a404addcec83-c000.snappy.parquet, range: 0-41582591, partition values: [empty row]
+25/04/13 21:50:51 INFO CoarseGrainedExecutorBackend: Got assigned task 15
+25/04/13 21:50:51 INFO Executor: Running task 13.0 in stage 2.0 (TID 15)
+25/04/13 21:50:51 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 35.5 KiB, free 418.6 MiB)
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/01/part-00000-29294009-15d0-41fd-a046-e40b75cc012d-c000.snappy.parquet, range: 0-42409794, partition values: [empty row]
+25/04/13 21:50:51 INFO TorrentBroadcast: Reading broadcast variable 3 took 50 ms
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/02/part-00003-b534908f-ec18-46db-bfff-a404addcec83-c000.snappy.parquet, range: 0-41650729, partition values: [empty row]
+25/04/13 21:50:51 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 370.9 KiB, free 420.0 MiB)
+25/04/13 21:50:51 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/03/part-00000-763e6027-5232-43d3-b551-8d708b9a128e-c000.snappy.parquet, range: 0-19960785, partition values: [empty row]
+25/04/13 21:50:52 INFO Executor: Finished task 0.0 in stage 2.0 (TID 2). 3474 bytes result sent to driver
+25/04/13 21:50:52 INFO CoarseGrainedExecutorBackend: Got assigned task 16
+25/04/13 21:50:52 INFO Executor: Running task 14.0 in stage 2.0 (TID 16)
+25/04/13 21:50:52 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/green/2020/03/part-00002-402617c6-2027-45ca-ba6f-4a55b874b764-c000.snappy.parquet, range: 0-1684292, partition values: [empty row]
+25/04/13 21:50:52 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/10/part-00001-64d9e158-0dc3-477f-9888-3e6d2144c263-c000.snappy.parquet, range: 0-11432331, partition values: [empty row]
+25/04/13 21:50:52 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/12/part-00003-c699fd7c-33ad-4980-adda-a96b39b9741c-c000.snappy.parquet, range: 0-9972740, partition values: [empty row]
+25/04/13 21:50:52 INFO Executor: Finished task 1.0 in stage 2.0 (TID 3). 3517 bytes result sent to driver
+25/04/13 21:50:52 INFO CoarseGrainedExecutorBackend: Got assigned task 17
+25/04/13 21:50:52 INFO Executor: Running task 15.0 in stage 2.0 (TID 17)
+25/04/13 21:50:52 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/08/part-00000-88064eb8-2170-4a0d-b00c-9d9f73f989b1-c000.snappy.parquet, range: 0-6968868, partition values: [empty row]
+25/04/13 21:50:53 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/12/part-00002-c699fd7c-33ad-4980-adda-a96b39b9741c-c000.snappy.parquet, range: 0-9967984, partition values: [empty row]
+25/04/13 21:50:53 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/10/part-00002-64d9e158-0dc3-477f-9888-3e6d2144c263-c000.snappy.parquet, range: 0-11431061, partition values: [empty row]
+25/04/13 21:50:53 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/08/part-00002-88064eb8-2170-4a0d-b00c-9d9f73f989b1-c000.snappy.parquet, range: 0-6962487, partition values: [empty row]
+25/04/13 21:50:54 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/03/part-00002-763e6027-5232-43d3-b551-8d708b9a128e-c000.snappy.parquet, range: 0-19950380, partition values: [empty row]
+25/04/13 21:50:54 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/08/part-00001-88064eb8-2170-4a0d-b00c-9d9f73f989b1-c000.snappy.parquet, range: 0-6957804, partition values: [empty row]
+25/04/13 21:50:54 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/12/part-00001-c699fd7c-33ad-4980-adda-a96b39b9741c-c000.snappy.parquet, range: 0-9965785, partition values: [empty row]
+25/04/13 21:50:54 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/10/part-00000-64d9e158-0dc3-477f-9888-3e6d2144c263-c000.snappy.parquet, range: 0-11421511, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/08/part-00003-88064eb8-2170-4a0d-b00c-9d9f73f989b1-c000.snappy.parquet, range: 0-6944808, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/12/part-00000-c699fd7c-33ad-4980-adda-a96b39b9741c-c000.snappy.parquet, range: 0-9956792, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/03/part-00003-763e6027-5232-43d3-b551-8d708b9a128e-c000.snappy.parquet, range: 0-19946089, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/07/part-00001-0cabef9e-e877-4333-81f9-ce537bfe660d-c000.snappy.parquet, range: 0-5606348, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/02/part-00000-b534908f-ec18-46db-bfff-a404addcec83-c000.snappy.parquet, range: 0-41605308, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/11/part-00003-89c69827-f65f-4be2-9e72-08017df29be8-c000.snappy.parquet, range: 0-10277035, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/01/part-00003-29294009-15d0-41fd-a046-e40b75cc012d-c000.snappy.parquet, range: 0-42371104, partition values: [empty row]
+25/04/13 21:50:55 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/02/part-00002-b534908f-ec18-46db-bfff-a404addcec83-c000.snappy.parquet, range: 0-41567364, partition values: [empty row]
+25/04/13 21:50:56 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/01/part-00002-29294009-15d0-41fd-a046-e40b75cc012d-c000.snappy.parquet, range: 0-42397720, partition values: [empty row]
+25/04/13 21:50:56 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/07/part-00003-0cabef9e-e877-4333-81f9-ce537bfe660d-c000.snappy.parquet, range: 0-5602523, partition values: [empty row]
+25/04/13 21:50:56 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/09/part-00000-6ca7a1f3-e34c-43be-8582-c30cd54137c0-c000.snappy.parquet, range: 0-9173614, partition values: [empty row]
+25/04/13 21:50:56 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/11/part-00002-89c69827-f65f-4be2-9e72-08017df29be8-c000.snappy.parquet, range: 0-10264901, partition values: [empty row]
+25/04/13 21:50:56 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/07/part-00000-0cabef9e-e877-4333-81f9-ce537bfe660d-c000.snappy.parquet, range: 0-5602127, partition values: [empty row]
+25/04/13 21:50:57 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/03/part-00001-763e6027-5232-43d3-b551-8d708b9a128e-c000.snappy.parquet, range: 0-19945339, partition values: [empty row]
+25/04/13 21:50:57 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/09/part-00001-6ca7a1f3-e34c-43be-8582-c30cd54137c0-c000.snappy.parquet, range: 0-9167874, partition values: [empty row]
+25/04/13 21:50:57 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/07/part-00002-0cabef9e-e877-4333-81f9-ce537bfe660d-c000.snappy.parquet, range: 0-5589361, partition values: [empty row]
+25/04/13 21:50:57 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/11/part-00000-89c69827-f65f-4be2-9e72-08017df29be8-c000.snappy.parquet, range: 0-10260399, partition values: [empty row]
+25/04/13 21:50:58 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/06/part-00001-d82421f7-fc38-437c-8a15-5b47fc65d646-c000.snappy.parquet, range: 0-3979842, partition values: [empty row]
+25/04/13 21:50:58 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/09/part-00003-6ca7a1f3-e34c-43be-8582-c30cd54137c0-c000.snappy.parquet, range: 0-9155847, partition values: [empty row]
+25/04/13 21:50:58 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/11/part-00001-89c69827-f65f-4be2-9e72-08017df29be8-c000.snappy.parquet, range: 0-10251356, partition values: [empty row]
+25/04/13 21:50:59 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/06/part-00003-d82421f7-fc38-437c-8a15-5b47fc65d646-c000.snappy.parquet, range: 0-3979733, partition values: [empty row]
+25/04/13 21:50:59 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/10/part-00003-64d9e158-0dc3-477f-9888-3e6d2144c263-c000.snappy.parquet, range: 0-11454187, partition values: [empty row]
+25/04/13 21:50:59 INFO Executor: Finished task 10.0 in stage 2.0 (TID 12). 3474 bytes result sent to driver
+25/04/13 21:50:59 INFO CoarseGrainedExecutorBackend: Got assigned task 18
+25/04/13 21:50:59 INFO Executor: Running task 16.0 in stage 2.0 (TID 18)
+25/04/13 21:50:59 INFO Executor: Finished task 11.0 in stage 2.0 (TID 13). 3474 bytes result sent to driver
+25/04/13 21:50:59 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/06/part-00002-d82421f7-fc38-437c-8a15-5b47fc65d646-c000.snappy.parquet, range: 0-3975965, partition values: [empty row]
+25/04/13 21:50:59 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/06/part-00000-d82421f7-fc38-437c-8a15-5b47fc65d646-c000.snappy.parquet, range: 0-3976991, partition values: [empty row]
+25/04/13 21:51:00 INFO Executor: Finished task 9.0 in stage 2.0 (TID 11). 3517 bytes result sent to driver
+25/04/13 21:51:00 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/05/part-00002-1be3f526-0bc0-483b-a895-0781d5d02ad9-c000.snappy.parquet, range: 0-2663053, partition values: [empty row]
+25/04/13 21:51:00 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/09/part-00002-6ca7a1f3-e34c-43be-8582-c30cd54137c0-c000.snappy.parquet, range: 0-9147786, partition values: [empty row]
+25/04/13 21:51:00 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/05/part-00000-1be3f526-0bc0-483b-a895-0781d5d02ad9-c000.snappy.parquet, range: 0-2661723, partition values: [empty row]
+25/04/13 21:51:00 INFO Executor: Finished task 8.0 in stage 2.0 (TID 10). 3517 bytes result sent to driver
+25/04/13 21:51:00 INFO Executor: Finished task 15.0 in stage 2.0 (TID 17). 3474 bytes result sent to driver
+25/04/13 21:51:00 INFO Executor: Finished task 13.0 in stage 2.0 (TID 15). 3474 bytes result sent to driver
+25/04/13 21:51:00 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/05/part-00003-1be3f526-0bc0-483b-a895-0781d5d02ad9-c000.snappy.parquet, range: 0-2654996, partition values: [empty row]
+25/04/13 21:51:01 INFO Executor: Finished task 12.0 in stage 2.0 (TID 14). 3474 bytes result sent to driver
+25/04/13 21:51:01 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/05/part-00001-1be3f526-0bc0-483b-a895-0781d5d02ad9-c000.snappy.parquet, range: 0-2652297, partition values: [empty row]
+25/04/13 21:51:01 INFO Executor: Finished task 14.0 in stage 2.0 (TID 16). 3474 bytes result sent to driver
+25/04/13 21:51:01 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/04/part-00003-02dd2a46-27eb-47c2-a7b5-d846546aa4ac-c000.snappy.parquet, range: 0-1802229, partition values: [empty row]
+25/04/13 21:51:01 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/04/part-00001-02dd2a46-27eb-47c2-a7b5-d846546aa4ac-c000.snappy.parquet, range: 0-1801938, partition values: [empty row]
+25/04/13 21:51:01 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/04/part-00000-02dd2a46-27eb-47c2-a7b5-d846546aa4ac-c000.snappy.parquet, range: 0-1801760, partition values: [empty row]
+25/04/13 21:51:01 INFO FileScanRDD: Reading File path: file:///home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/pq/yellow/2020/04/part-00002-02dd2a46-27eb-47c2-a7b5-d846546aa4ac-c000.snappy.parquet, range: 0-1800997, partition values: [empty row]
+25/04/13 21:51:01 INFO Executor: Finished task 16.0 in stage 2.0 (TID 18). 3474 bytes result sent to driver
+25/04/13 21:51:02 INFO CoarseGrainedExecutorBackend: Got assigned task 19
+25/04/13 21:51:02 INFO Executor: Running task 0.0 in stage 4.0 (TID 19)
+25/04/13 21:51:02 INFO MapOutputTrackerWorker: Updating epoch to 1 and clearing cache
+25/04/13 21:51:02 INFO TorrentBroadcast: Started reading broadcast variable 5 with 1 pieces (estimated total size 4.0 MiB)
+25/04/13 21:51:02 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 103.5 KiB, free 433.5 MiB)
+25/04/13 21:51:02 INFO TorrentBroadcast: Reading broadcast variable 5 took 27 ms
+25/04/13 21:51:02 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 292.4 KiB, free 433.2 MiB)
+25/04/13 21:51:02 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/04/13 21:51:02 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/04/13 21:51:02 INFO SQLHadoopMapReduceCommitProtocol: Using user defined output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/04/13 21:51:02 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+25/04/13 21:51:02 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+25/04/13 21:51:02 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.parquet.hadoop.ParquetOutputCommitter
+25/04/13 21:51:02 INFO CodecConfig: Compression: SNAPPY
+25/04/13 21:51:02 INFO CodecConfig: Compression: SNAPPY
+25/04/13 21:51:02 INFO ParquetOutputFormat: ParquetRecordWriter [block size: 134217728b, row group padding size: 8388608b, validating: false]
+25/04/13 21:51:02 INFO ParquetWriteSupport: Initialized Parquet WriteSupport with Catalyst schema:
+{
+  "type" : "struct",
+  "fields" : [ {
+    "name" : "revenue_zone",
+    "type" : "integer",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_month",
+    "type" : "timestamp",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "service_type",
+    "type" : "string",
+    "nullable" : false,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_fare",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_extra",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_mta_tax",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_tip_amount",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_tolls_amount",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_improvement_surcharge",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_total_amount",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "revenue_monthly_congestion_surcharge",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "avg_montly_passenger_count",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  }, {
+    "name" : "avg_montly_trip_distance",
+    "type" : "double",
+    "nullable" : true,
+    "metadata" : { }
+  } ]
+}
+and corresponding Parquet message type:
+message spark_schema {
+  optional int32 revenue_zone;
+  optional int96 revenue_month;
+  required binary service_type (STRING);
+  optional double revenue_monthly_fare;
+  optional double revenue_monthly_extra;
+  optional double revenue_monthly_mta_tax;
+  optional double revenue_monthly_tip_amount;
+  optional double revenue_monthly_tolls_amount;
+  optional double revenue_monthly_improvement_surcharge;
+  optional double revenue_monthly_total_amount;
+  optional double revenue_monthly_congestion_surcharge;
+  optional double avg_montly_passenger_count;
+  optional double avg_montly_trip_distance;
+}
+
+       
+25/04/13 21:51:02 INFO CodecPool: Got brand-new compressor [.snappy]
+25/04/13 21:51:02 INFO MapOutputTrackerWorker: Don't have map outputs for shuffle 0, fetching them
+25/04/13 21:51:02 INFO MapOutputTrackerWorker: Doing the fetch; tracker endpoint = NettyRpcEndpointRef(spark://MapOutputTracker@10.255.255.254:44975)
+25/04/13 21:51:02 INFO MapOutputTrackerWorker: Got the map output locations
+25/04/13 21:51:02 INFO ShuffleBlockFetcherIterator: Getting 17 (1007.3 KiB) non-empty blocks including 17 (1007.3 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+25/04/13 21:51:02 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 33 ms
+25/04/13 21:51:02 INFO CodeGenerator: Code generated in 75.558193 ms
+25/04/13 21:51:04 INFO FileOutputCommitter: Saved output of task 'attempt_202504132151021735191518982478940_0004_m_000000_19' to file:/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/data/report/report-2020/_temporary/0/task_202504132151021735191518982478940_0004_m_000000
+25/04/13 21:51:04 INFO SparkHadoopMapRedUtil: attempt_202504132151021735191518982478940_0004_m_000000_19: Committed. Elapsed time: 1 ms.
+25/04/13 21:51:04 INFO Executor: Finished task 0.0 in stage 4.0 (TID 19). 6849 bytes result sent to driver
+25/04/13 21:51:04 INFO CoarseGrainedExecutorBackend: Driver commanded a shutdown
+25/04/13 21:51:04 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+tdown

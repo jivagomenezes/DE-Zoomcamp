@@ -1,19 +1,77 @@
-# Ignorar arquivos CSV, compactados e grandes
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data
 *.csv
+*.parquet
 *.gz
 *.zip
-*.db
+*.tar
+# Uncomment if you want to exclude large data files
+# data/
+
+# Logs
+logs/
+*.log
+
+# Google Cloud
+google_credentials.json
+*-credentials.json
 *.json
 
-# Ignorar diretórios específicos
-ny_taxi_postgres_data/
-myenv/
-data_pgadmin/*
-data_pgadmin/
-ny_taxi_postgres_data/*
-myenv/*
-data_admin/*
+# Docker
+.docker/
 
-# Ignorar arquivos no subdiretório
-01-docker-terraform/02_docker_sql/yellow_tripdata_2021-01.csv
-99-files-arquive/yellow_tripdata_2021-01.csv.gz
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+terraform.tfvars
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Airflow
+airflow.db
+airflow.cfg
+webserver_config.py
