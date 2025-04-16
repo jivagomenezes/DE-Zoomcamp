@@ -1,0 +1,46 @@
+Spark Executor Command: "/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/jdk-11.0.2/bin/java" "-cp" "/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/sparkEnv/conf/:/home/jivagomenezes/00-dev/01-Projects/01-Data-Engineer/01-Active/02-zoomcamp-datatalks/05_Batch-Processing-Spark/sparkEnv/jars/*" "-Xmx1024M" "-Dspark.driver.port=46663" "-Djava.net.preferIPv6Addresses=false" "-XX:+IgnoreUnrecognizedVMOptions" "--add-opens=java.base/java.lang=ALL-UNNAMED" "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED" "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED" "--add-opens=java.base/java.io=ALL-UNNAMED" "--add-opens=java.base/java.net=ALL-UNNAMED" "--add-opens=java.base/java.nio=ALL-UNNAMED" "--add-opens=java.base/java.util=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent=ALL-UNNAMED" "--add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED" "--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED" "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED" "--add-opens=java.base/sun.nio.cs=ALL-UNNAMED" "--add-opens=java.base/sun.security.action=ALL-UNNAMED" "--add-opens=java.base/sun.util.calendar=ALL-UNNAMED" "--add-opens=java.security.jgss/sun.security.krb5=ALL-UNNAMED" "-Djdk.reflect.useDirectMethodHandle=false" "org.apache.spark.executor.CoarseGrainedExecutorBackend" "--driver-url" "spark://CoarseGrainedScheduler@10.255.255.254:46663" "--executor-id" "0" "--hostname" "10.255.255.254" "--cores" "8" "--app-id" "app-20250413213218-0000" "--worker-url" "spark://Worker@10.255.255.254:34013" "--resourceProfileId" "0"
+========================================
+
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+25/04/13 21:32:20 INFO CoarseGrainedExecutorBackend: Started daemon with process name: 449762@ThinkPad-Jivago
+25/04/13 21:32:20 INFO SignalUtils: Registering signal handler for TERM
+25/04/13 21:32:20 INFO SignalUtils: Registering signal handler for HUP
+25/04/13 21:32:20 INFO SignalUtils: Registering signal handler for INT
+25/04/13 21:32:20 WARN Utils: Your hostname, ThinkPad-Jivago resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+25/04/13 21:32:20 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+25/04/13 21:32:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/04/13 21:32:20 INFO SecurityManager: Changing view acls to: jivagomenezes
+25/04/13 21:32:20 INFO SecurityManager: Changing modify acls to: jivagomenezes
+25/04/13 21:32:20 INFO SecurityManager: Changing view acls groups to: 
+25/04/13 21:32:20 INFO SecurityManager: Changing modify acls groups to: 
+25/04/13 21:32:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: jivagomenezes; groups with view permissions: EMPTY; users with modify permissions: jivagomenezes; groups with modify permissions: EMPTY
+25/04/13 21:32:21 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:46663 after 88 ms (0 ms spent in bootstraps)
+25/04/13 21:32:21 INFO SecurityManager: Changing view acls to: jivagomenezes
+25/04/13 21:32:21 INFO SecurityManager: Changing modify acls to: jivagomenezes
+25/04/13 21:32:21 INFO SecurityManager: Changing view acls groups to: 
+25/04/13 21:32:21 INFO SecurityManager: Changing modify acls groups to: 
+25/04/13 21:32:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: jivagomenezes; groups with view permissions: EMPTY; users with modify permissions: jivagomenezes; groups with modify permissions: EMPTY
+25/04/13 21:32:21 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:46663 after 5 ms (0 ms spent in bootstraps)
+25/04/13 21:32:21 INFO DiskBlockManager: Created local directory at /tmp/spark-8820a8a5-58a3-48f0-8f85-ada23d0d8107/executor-1ef18dce-831f-40f9-a6ee-5808acac0c54/blockmgr-6ac2eb1a-d10d-4fb5-95dd-b16af1003c03
+25/04/13 21:32:21 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+25/04/13 21:32:22 INFO CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@10.255.255.254:46663
+25/04/13 21:32:22 INFO WorkerWatcher: Connecting to worker spark://Worker@10.255.255.254:34013
+25/04/13 21:32:22 INFO TransportClientFactory: Successfully created connection to /10.255.255.254:34013 after 6 ms (0 ms spent in bootstraps)
+25/04/13 21:32:22 INFO WorkerWatcher: Successfully connected to spark://Worker@10.255.255.254:34013
+25/04/13 21:32:22 INFO ResourceUtils: ==============================================================
+25/04/13 21:32:22 INFO ResourceUtils: No custom resources configured for spark.executor.
+25/04/13 21:32:22 INFO ResourceUtils: ==============================================================
+25/04/13 21:32:22 INFO CoarseGrainedExecutorBackend: Successfully registered with driver
+25/04/13 21:32:22 INFO Executor: Starting executor ID 0 on host 10.255.255.254
+25/04/13 21:32:22 INFO Executor: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+25/04/13 21:32:22 INFO Executor: Java version 11.0.2
+25/04/13 21:32:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 46235.
+25/04/13 21:32:22 INFO NettyBlockTransferService: Server created on 10.255.255.254:46235
+25/04/13 21:32:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/04/13 21:32:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(0, 10.255.255.254, 46235, None)
+25/04/13 21:32:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(0, 10.255.255.254, 46235, None)
+25/04/13 21:32:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(0, 10.255.255.254, 46235, None)
+25/04/13 21:32:22 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/04/13 21:32:22 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@39832153 for default.
+25/04/13 21:50:33 ERROR CoarseGrainedExecutorBackend: RECEIVED SIGNAL TERM
+pache.spark.util.MutableURLClassLoader@39832153 for default.

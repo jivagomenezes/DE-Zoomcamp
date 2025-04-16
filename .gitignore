@@ -1,19 +1,112 @@
-# Ignorar arquivos CSV, compactados e grandes
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data
 *.csv
+*.parquet
 *.gz
 *.zip
-*.db
-*.json
+*.tar
+*tripdata*
+data/raw/
+*/*/data/raw/
+*/data/pq/
+*/*/data/pq/
 
-# Ignorar diretórios específicos
-ny_taxi_postgres_data/
-myenv/
-data_pgadmin/*
-data_pgadmin/
-ny_taxi_postgres_data/*
-myenv/*
-data_admin/*
+# Logs
+logs/
+*.log
 
-# Ignorar arquivos no subdiretório
-01-docker-terraform/02_docker_sql/yellow_tripdata_2021-01.csv
-99-files-arquive/yellow_tripdata_2021-01.csv.gz
+# Google Cloud
+google_credentials.json
+*-credentials.json
+*credentials*.json
+*/*/google/*.json
+*/google/*.json
+# Specific credential files
+*zoomcamp-airflow*.json
+*gira-bike*.json
+
+# Docker
+.docker/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+terraform.tfvars
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Airflow
+airflow.db
+airflow.cfg
+webserver_config.py
+# Large files from Spark
+05_Batch-Processing-Spark/spark-3.5.5-bin-hadoop3.tgz
+05_Batch-Processing-Spark/sparkEnv/
+05_Batch-Processing-Spark/jdk-11.0.2/
+05_Batch-Processing-Spark/openjdk-11.0.2_linux-x64_bin.tar.gz
+05_Batch-Processing-Spark/fhvhv_tripdata_2021-01.csv
+05_Batch-Processing-Spark/data/
+
+# Log files
+**/logs/**
+**/myenv/**
+**/data_pgadmin/**
+**/ny_taxi_postgres_data/**
+
+# Misc
+**/:Zone.Identifier
+
+# Virtual environments and cache
+.venv/
+__pycache__/
+**/myenv/
+**/.venv/
+**/*.pyc
+
+# Large data directories
+**/ny_taxi_postgres_data/
+**/data_pgadmin/
