@@ -1,0 +1,9 @@
+jivago_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      project: zoomcamp-airflow-456109
+      dataset: ny_taxi_data
+      location: EU  # Definindo a região como EU
+      

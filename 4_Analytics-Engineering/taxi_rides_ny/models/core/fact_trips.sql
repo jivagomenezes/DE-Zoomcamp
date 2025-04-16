@@ -4,20 +4,20 @@
     )
 }}
 
-with green_tripdata as (
+with green_2019 as (
     select *, 
         'Green' as service_type
-    from {{ ref('stg_green_tripdata') }}
+    from {{ ref('stg_green_2019') }}
 ), 
-yellow_tripdata as (
+yellow_2019 as (
     select *, 
         'Yellow' as service_type
-    from {{ ref('stg_yellow_tripdata') }}
+    from {{ ref('stg_yellow_2019') }}
 ), 
 trips_unioned as (
-    select * from green_tripdata
+    select * from green_2019
     union all 
-    select * from yellow_tripdata
+    select * from yellow_2019
 ), 
 dim_zones as (
     select * from {{ ref('dim_zones') }}
