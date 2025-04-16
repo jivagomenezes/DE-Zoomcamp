@@ -44,8 +44,11 @@ venv.bak/
 *.gz
 *.zip
 *.tar
-# Uncomment if you want to exclude large data files
-# data/
+*tripdata*
+data/raw/
+*/*/data/raw/
+*/data/pq/
+*/*/data/pq/
 
 # Logs
 logs/
@@ -54,7 +57,12 @@ logs/
 # Google Cloud
 google_credentials.json
 *-credentials.json
-*.json
+*credentials*.json
+*/*/google/*.json
+*/google/*.json
+# Specific credential files
+*zoomcamp-airflow*.json
+*gira-bike*.json
 
 # Docker
 .docker/
@@ -77,8 +85,11 @@ airflow.cfg
 webserver_config.py
 # Large files from Spark
 05_Batch-Processing-Spark/spark-3.5.5-bin-hadoop3.tgz
-05_Batch-Processing-Spark/sparkEnv/yarn/spark-3.5.5-yarn-shuffle.jar
-05_Batch-Processing-Spark/sparkEnv/jars/rocksdbjni-8.3.2.jar
+05_Batch-Processing-Spark/sparkEnv/
+05_Batch-Processing-Spark/jdk-11.0.2/
+05_Batch-Processing-Spark/openjdk-11.0.2_linux-x64_bin.tar.gz
+05_Batch-Processing-Spark/fhvhv_tripdata_2021-01.csv
+05_Batch-Processing-Spark/data/
 
 # Log files
 **/logs/**
@@ -88,3 +99,14 @@ webserver_config.py
 
 # Misc
 **/:Zone.Identifier
+
+# Virtual environments and cache
+.venv/
+__pycache__/
+**/myenv/
+**/.venv/
+**/*.pyc
+
+# Large data directories
+**/ny_taxi_postgres_data/
+**/data_pgadmin/
