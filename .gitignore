@@ -75,3 +75,16 @@ logs/
 airflow.db
 airflow.cfg
 webserver_config.py
+# Large files from Spark
+05_Batch-Processing-Spark/spark-3.5.5-bin-hadoop3.tgz
+05_Batch-Processing-Spark/sparkEnv/yarn/spark-3.5.5-yarn-shuffle.jar
+05_Batch-Processing-Spark/sparkEnv/jars/rocksdbjni-8.3.2.jar
+
+# Log files
+**/logs/**
+**/myenv/**
+**/data_pgadmin/**
+**/ny_taxi_postgres_data/**
+
+# Misc
+**/:Zone.Identifier
